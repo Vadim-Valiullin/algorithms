@@ -29,10 +29,25 @@ def writer(bond_list):
     with open("new_file.csv", "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerows(bond_list)
+        
+        
+        
+def get_by_date(date="2017-08-08", name="PCLN", filename='dump.csv'):
+    with open('all_stocks_5yr.csv', newline='') as File:
+        reader = csv.reader(File)
+        bond_list = []
+        for row in reader:
+            if row[0] == date and row[6] == name:
+                bond_list.append(row)
+    with open(filename, "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerows(bond_list)
+        
 
 if __name__ == '__main__':
     bond_list = reader()
     bond_list = sorter(bond_list)
     writer(bond_list)
+    get_by_date()
 
 
