@@ -71,8 +71,8 @@ def input_name_column(bond_list):
 if __name__ == '__main__':
     bond_list = reader()
     input_name_column(bond_list)
-#     bond_list = sorter(bond_list)
-#     writer(bond_list)
-#     get_by_date()
+    bond_list = sorter(bond_list)
+    writer(bond_list)
+    get_by_date()
 
 
